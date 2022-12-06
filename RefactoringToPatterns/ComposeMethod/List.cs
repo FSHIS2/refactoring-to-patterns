@@ -26,10 +26,14 @@ namespace RefactoringToPatterns.ComposeMethod
             if (!readOnly) {
                 int newSize = size + 1;
 
-                CheckSize(newSize);
-
-                AddSingleElement(element);
+                DecideOperation(element, newSize);
             }
+        }
+
+        private void DecideOperation(object element, int newSize) {
+            CheckSize(newSize);
+
+            AddSingleElement(element);
         }
 
         private void AddSingleElement(object element) {
