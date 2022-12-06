@@ -8,14 +8,16 @@ namespace RefactoringToPatterns.ComposeMethod
     {
 
         private readonly bool readOnly;
-        private int size;
-        private Object[] elements;
+        public int size;
+        public Object[] elements;
+        private readonly MultipleElementsOperations multipleElementsOperations;
 
         public List(bool readOnly)
         {
             this.readOnly = readOnly;
             size = 0;
             elements = new Object[size];
+            multipleElementsOperations = new MultipleElementsOperations(this);
         }
 
         public void Add(Object element) {
@@ -48,23 +50,8 @@ namespace RefactoringToPatterns.ComposeMethod
             if (newSize > elements.Length) {
                 Object[] newElements = new Object[elements.Length + 10];
 
-                OperateWithElements(newElements);
+                multipleElementsOperations.OperateWithElements(newElements);
             }
-        }
-
-        private void OperateWithElements(object[] newElements) {
-            FindNewElements(newElements);
-
-            AddNewElements(newElements);
-        }
-
-        private void FindNewElements(object[] newElements) {
-            for (int i = 0; i < size; i++)
-                newElements[i] = elements[i];
-        }
-
-        private void AddNewElements(object[] newElements) {
-            elements = newElements;
         }
 
         public object[] Elements()
