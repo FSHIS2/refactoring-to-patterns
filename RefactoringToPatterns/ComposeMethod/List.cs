@@ -38,7 +38,7 @@ namespace RefactoringToPatterns.ComposeMethod
             if (newSize > elements.Length) {
                 Object[] newElements = new Object[elements.Length + 10];
 
-                specificOperations.OperateWithElements(newElements);
+                specificOperations.OperateWithMoreThanOneElement(newElements);
             }
         }
 

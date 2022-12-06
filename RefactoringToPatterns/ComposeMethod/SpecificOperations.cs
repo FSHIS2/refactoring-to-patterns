@@ -6,7 +6,7 @@ namespace RefactoringToPatterns.ComposeMethod {
             this.list = list;
         }
 
-        public void OperateWithElements(object[] newElements) {
+        public void OperateWithMoreThanOneElement(object[] newElements) {
             FindNewElements(newElements);
 
             AddNewElements(newElements);
