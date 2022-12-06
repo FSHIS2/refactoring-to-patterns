@@ -46,7 +46,7 @@ namespace RefactoringToPatterns.ComposeMethod
 
                 FindNewElements(newElements);
 
-                AddElements(newElements);
+                AddNewElements(newElements);
             }
         }
 
@@ -55,7 +55,7 @@ namespace RefactoringToPatterns.ComposeMethod
                 newElements[i] = elements[i];
         }
 
-        private void AddElements(object[] newElements) {
+        private void AddNewElements(object[] newElements) {
             elements = newElements;
         }
 
