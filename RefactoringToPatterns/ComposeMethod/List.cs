@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using System.Web;
 
 namespace RefactoringToPatterns.ComposeMethod
 {
@@ -38,11 +36,9 @@ namespace RefactoringToPatterns.ComposeMethod
             }
         }
 
-        public object[] Elements()
-        {
+        public object[] Elements() {
             return elements;
         }
 
     }
-
 }

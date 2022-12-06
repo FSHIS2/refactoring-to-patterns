@@ -1,6 +1,6 @@
 namespace RefactoringToPatterns.ComposeMethod {
     public class GeneralOperations {
-        private List list;
+        private readonly List list;
 
         public GeneralOperations(List list) {
             this.list = list;
@@ -12,12 +12,13 @@ namespace RefactoringToPatterns.ComposeMethod {
             AddSingleElement(element);
         }
 
+        private void CheckSize(int newSize) {
+            list.SpecificOperations.OperateWhenSizeIsGreaterThanLength(newSize, list);
+        }
+
         private void AddSingleElement(object element) {
             list.elements[list.size++] = element;
         }
 
-        private void CheckSize(int newSize) {
-            list.SpecificOperations.OperateWhenSizeIsGreaterThanLength(newSize, list);
-        }
     }
 }

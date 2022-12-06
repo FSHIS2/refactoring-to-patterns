@@ -2,7 +2,7 @@ using System;
 
 namespace RefactoringToPatterns.ComposeMethod {
     public class SpecificOperations {
-        private List list;
+        private readonly List list;
 
         public SpecificOperations(List list) {
             this.list = list;
@@ -11,7 +11,7 @@ namespace RefactoringToPatterns.ComposeMethod {
             if (newSize > list.elements.Length) {
                 Object[] newElements = new Object[list.elements.Length + 10];
 
-                this.PerformOperationSteps(newElements);
+                PerformOperationSteps(newElements);
             }
         }
 
