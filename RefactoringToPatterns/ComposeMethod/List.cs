@@ -28,8 +28,12 @@ namespace RefactoringToPatterns.ComposeMethod
 
                 CheckSize(newSize);
 
-                elements[size++] = element;
+                AddSingleElement(element);
             }
+        }
+
+        private void AddSingleElement(object element) {
+            elements[size++] = element;
         }
 
         private void CheckSize(int newSize) {
