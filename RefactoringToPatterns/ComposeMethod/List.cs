@@ -41,6 +41,10 @@ namespace RefactoringToPatterns.ComposeMethod
         }
 
         private void CheckSize(int newSize) {
+            OperateWhenSizeIsGreaterThanLength(newSize);
+        }
+
+        private void OperateWhenSizeIsGreaterThanLength(int newSize) {
             if (newSize > elements.Length) {
                 Object[] newElements = new Object[elements.Length + 10];
 
