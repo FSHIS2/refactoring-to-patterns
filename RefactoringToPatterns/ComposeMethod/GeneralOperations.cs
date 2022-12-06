@@ -17,7 +17,7 @@ namespace RefactoringToPatterns.ComposeMethod {
         }
 
         private void CheckSize(int newSize) {
-            list.OperateWhenSizeIsGreaterThanLength(newSize);
+            list.SpecificOperations.OperateWhenSizeIsGreaterThanLength(newSize, list);
         }
     }
 }

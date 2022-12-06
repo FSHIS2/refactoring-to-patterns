@@ -22,6 +22,10 @@ namespace RefactoringToPatterns.ComposeMethod
             generalOperations = new GeneralOperations(this);
         }
 
+        public SpecificOperations SpecificOperations {
+            get { return specificOperations; }
+        }
+
         public void Add(Object element) {
             IsReadOnly(element);
         }
@@ -31,14 +35,6 @@ namespace RefactoringToPatterns.ComposeMethod
                 int newSize = size + 1;
 
                 generalOperations.DecideOperation(element, newSize);
-            }
-        }
-
-        public void OperateWhenSizeIsGreaterThanLength(int newSize) {
-            if (newSize > elements.Length) {
-                Object[] newElements = new Object[elements.Length + 10];
-
-                specificOperations.OperateWithMoreThanOneElement(newElements);
             }
         }
 

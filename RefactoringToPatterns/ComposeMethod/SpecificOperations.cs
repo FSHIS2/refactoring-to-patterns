@@ -1,3 +1,5 @@
+using System;
+
 namespace RefactoringToPatterns.ComposeMethod {
     public class SpecificOperations {
         private List list;
@@ -19,6 +21,14 @@ namespace RefactoringToPatterns.ComposeMethod {
 
         private void AddNewElements(object[] newElements) {
             list.elements = newElements;
+        }
+
+        public void OperateWhenSizeIsGreaterThanLength(int newSize, List list) {
+            if (newSize > list.elements.Length) {
+                Object[] newElements = new Object[list.elements.Length + 10];
+
+                this.OperateWithMoreThanOneElement(newElements);
+            }
         }
     }
 }
