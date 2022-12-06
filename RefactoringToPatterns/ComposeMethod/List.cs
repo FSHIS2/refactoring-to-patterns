@@ -26,16 +26,20 @@ namespace RefactoringToPatterns.ComposeMethod
             if (!readOnly) {
                 int newSize = size + 1;
 
-                if (newSize > elements.Length) {
-                    Object[] newElements = new Object[elements.Length + 10];
-
-                    for (int i = 0; i < size; i++)
-                        newElements[i] = elements[i];
-
-                    elements = newElements;
-                }
+                CheckSize(newSize);
 
                 elements[size++] = element;
+            }
+        }
+
+        private void CheckSize(int newSize) {
+            if (newSize > elements.Length) {
+                Object[] newElements = new Object[elements.Length + 10];
+
+                for (int i = 0; i < size; i++)
+                    newElements[i] = elements[i];
+
+                elements = newElements;
             }
         }
 
