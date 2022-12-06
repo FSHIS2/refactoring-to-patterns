@@ -1,8 +1,8 @@
 namespace RefactoringToPatterns.ComposeMethod {
-    public class MultipleElementsOperations {
+    public class SpecificOperations {
         private List list;
 
-        public MultipleElementsOperations(List list) {
+        public SpecificOperations(List list) {
             this.list = list;
         }
 
