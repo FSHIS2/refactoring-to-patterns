@@ -47,8 +47,12 @@ namespace RefactoringToPatterns.ComposeMethod
                 for (int i = 0; i < size; i++)
                     newElements[i] = elements[i];
 
-                elements = newElements;
+                AddElements(newElements);
             }
+        }
+
+        private void AddElements(object[] newElements) {
+            elements = newElements;
         }
 
         public object[] Elements()
