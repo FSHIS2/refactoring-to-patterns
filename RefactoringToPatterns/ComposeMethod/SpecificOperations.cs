@@ -7,8 +7,15 @@ namespace RefactoringToPatterns.ComposeMethod {
         public SpecificOperations(List list) {
             this.list = list;
         }
+        public void OperateWhenSizeIsGreaterThanLength(int newSize, List list) {
+            if (newSize > list.elements.Length) {
+                Object[] newElements = new Object[list.elements.Length + 10];
 
-        public void OperateWithMoreThanOneElement(object[] newElements) {
+                this.PerformOperationSteps(newElements);
+            }
+        }
+
+        public void PerformOperationSteps(object[] newElements) {
             FindNewElements(newElements);
 
             AddNewElements(newElements);
@@ -23,12 +30,5 @@ namespace RefactoringToPatterns.ComposeMethod {
             list.elements = newElements;
         }
 
-        public void OperateWhenSizeIsGreaterThanLength(int newSize, List list) {
-            if (newSize > list.elements.Length) {
-                Object[] newElements = new Object[list.elements.Length + 10];
-
-                this.OperateWithMoreThanOneElement(newElements);
-            }
-        }
     }
 }
