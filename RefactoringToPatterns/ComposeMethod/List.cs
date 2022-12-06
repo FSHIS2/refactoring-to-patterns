@@ -7,37 +7,41 @@ namespace RefactoringToPatterns.ComposeMethod
     public class List
     {
 
-        private readonly bool _readOnly;
-        private int _size;
-        private Object[] _elements;
+        private readonly bool readOnly;
+        private int size;
+        private Object[] elements;
 
         public List(bool readOnly)
         {
-            _readOnly = readOnly;
-            _size = 0;
-            _elements = new Object[_size];
+            this.readOnly = readOnly;
+            size = 0;
+            elements = new Object[size];
         }
 
         public void Add(Object element) {
-            if(!_readOnly) {
-                int newSize = _size + 1;
+            IsReadOnly(element);
+        }
 
-                if(newSize > _elements.Length) {
-                    Object[] newElements = new Object[_elements.Length + 10];
+        private void IsReadOnly(object element) {
+            if (!readOnly) {
+                int newSize = size + 1;
 
-                    for (int i = 0; i < _size; i++)
-                        newElements[i] = _elements[i];
+                if (newSize > elements.Length) {
+                    Object[] newElements = new Object[elements.Length + 10];
 
-                    _elements = newElements;
+                    for (int i = 0; i < size; i++)
+                        newElements[i] = elements[i];
+
+                    elements = newElements;
                 }
 
-                _elements[_size++] = element;
+                elements[size++] = element;
             }
         }
 
         public object[] Elements()
         {
-            return _elements;
+            return elements;
         }
 
     }

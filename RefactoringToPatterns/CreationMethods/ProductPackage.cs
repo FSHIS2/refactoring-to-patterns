@@ -2,48 +2,48 @@ namespace RefactoringToPatterns.CreationMethods
 {
     public class ProductPackage
     {
-        private readonly string _internetLabel;
-        private readonly int? _telephoneNumber;
-        private readonly string[] _tvChannels;
+        private readonly string internetLabel;
+        private readonly int? telephoneNumber;
+        private readonly string[] tvChannels;
 
         public ProductPackage(string internetLabel)
         {
-            _internetLabel = internetLabel;
+            this.internetLabel = internetLabel;
         }
 
         public ProductPackage(string internetLabel, int telephoneNumber)
         {
-            _internetLabel = internetLabel;
-            _telephoneNumber = telephoneNumber;
+            this.internetLabel = internetLabel;
+            this.telephoneNumber = telephoneNumber;
         }
 
         public ProductPackage(string internetLabel, string[] tvChannels)
         {
-            _internetLabel = internetLabel;
-            _tvChannels = tvChannels;
+            this.internetLabel = internetLabel;
+            this.tvChannels = tvChannels;
         }
 
         public ProductPackage(string internetLabel, int telephoneNumber, string[] tvChannels)
         {
-            _internetLabel = internetLabel;
-            _telephoneNumber = telephoneNumber;
-            _tvChannels = tvChannels;
+            this.internetLabel = internetLabel;
+            this.telephoneNumber = telephoneNumber;
+            this.tvChannels = tvChannels;
         }
 
         public bool HasInternet()
         {
-            return _internetLabel != null;
+            return internetLabel != null;
         }
 
 
-        public bool HasVOIP()
+        public bool HasVoip()
         {
-            return _telephoneNumber != null;
+            return telephoneNumber != null;
         }
 
         public bool HasTv()
         {
-            return _tvChannels != null;
+            return tvChannels != null;
         }
     }
 }

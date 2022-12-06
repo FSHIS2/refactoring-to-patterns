@@ -10,7 +10,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
             var productPackage = new ProductPackage("100MB");
 
             Assert.True(productPackage.HasInternet());
-            Assert.False(productPackage.HasVOIP());
+            Assert.False(productPackage.HasVoip());
             Assert.False(productPackage.HasTv());
         }
 
@@ -20,7 +20,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
             var productPackage = new ProductPackage("100MB", 91233788);
 
             Assert.True(productPackage.HasInternet());
-            Assert.True(productPackage.HasVOIP());
+            Assert.True(productPackage.HasVoip());
             Assert.False(productPackage.HasTv());
         }
 
@@ -30,7 +30,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
             var productPackage = new ProductPackage("100MB", new[] {"LaLiga", "Estrenos"});
 
             Assert.True(productPackage.HasInternet());
-            Assert.False(productPackage.HasVOIP());
+            Assert.False(productPackage.HasVoip());
             Assert.True(productPackage.HasTv());
         }
 
@@ -40,7 +40,7 @@ namespace RefactoringToPatterns.CreationMethods.Tests
             var productPackage = new ProductPackage("100MB", 91233788, new[] {"LaLiga", "Estrenos"});
 
             Assert.True(productPackage.HasInternet());
-            Assert.True(productPackage.HasVOIP());
+            Assert.True(productPackage.HasVoip());
             Assert.True(productPackage.HasTv());
         }
     }
